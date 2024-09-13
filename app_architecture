@@ -1,0 +1,37 @@
+| "src" is the base directory
+    | "converter" is the main directory (app) for currency converter logic
+
+           * if we need to add some extra logic
+           (for example not only convert but get all exchange rates / see history of exchange rates)
+           we can add new directory (app) with same structure
+
+        | "services" is the directory to separate business logic
+            | "enums" - is the directory to keep all enums
+
+                 * to make app more scalable we can add enum modules to this directory
+
+            | "conversion" is the example of business logic module
+            | "validators" is utils for business logic (it can (should) be a directory same as enum with diff modules inside)
+            | "exceptions" is exceptions for business logic (it can (should) be a directory same as enum with diff modules inside)
+
+        | "config" - separate settings from base settings
+
+            * good practice to create different configs(settings) for different mini-apps
+
+        | "dependencies" - regular module to keep dependencies
+        | "router" - main module with endpoints
+
+            * should be small module without business logic inside
+
+        | "schemas" - regular module to keep schemas
+
+            * No need actually here - just to keep the structure.
+
+        | "utils" - non-business logic module
+
+
+Each new mini-app should have approx same structure so the whole app will be scalable.
+
+
+
+
